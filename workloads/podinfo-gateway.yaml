@@ -21,16 +21,12 @@ metadata:
   namespace: demo
 spec:
   selector:
-    matchLabels:
-      app: podinfo
+    app: podinfo
   hosts:
     - "*"
   gateways:
     - podinfo-gateway.demo.svc.cluster.local
   http:
-    - match: "*"
-      route:
-        - destination:
-            port:
-              number: 9898
-            host: podinfo
+    route:
+      - destination:
+          host: podinfo
