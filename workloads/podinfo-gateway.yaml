@@ -21,11 +21,11 @@ spec:
   hosts:
     - "*"
   gateways:
-    - podinfo-gateway
+    - podinfo-gateway.demo.svc.cluster.local
   http:
-    - "*"
-    - route:
+    - match: "*"
+      route:
         - destination:
-            host: podinfo
             port:
               number: 9898
+            host: podinfo
