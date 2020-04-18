@@ -20,6 +20,9 @@ metadata:
   name: podinfo
   namespace: demo
 spec:
+  selector:
+    matchLabels:
+      app: podinfo
   hosts:
     - "*"
   gateways:
