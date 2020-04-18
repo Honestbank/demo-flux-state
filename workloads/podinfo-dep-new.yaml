@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo
+  name: new-podinfo
   labels:
-    app: podinfo
+    app: new-podinfo
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.init: regex:^3.10.*
@@ -16,14 +16,14 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: podinfo
+      app: new-podinfo
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9797"
       labels:
-        app: podinfo
+        app: new-podinfo
     spec:
       initContainers:
         - name: init
@@ -32,7 +32,7 @@ spec:
             - sleep
             - "1"
       containers:
-        - name: podinfod
+        - name: new-podinfo
           image: stefanprodan/podinfo:3.1.5
           imagePullPolicy: IfNotPresent
           ports:
