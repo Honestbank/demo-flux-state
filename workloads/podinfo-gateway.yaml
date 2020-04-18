@@ -27,4 +27,7 @@ spec:
   http:
     route:
       - destination:
-          host: podinfo.demo.svc.cluster.local
+          namespace: demo
+          host: podinfo
+          port:
+            number: 9898
