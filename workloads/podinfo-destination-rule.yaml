@@ -4,5 +4,4 @@ metadata:
   name: podinfo
   namespace: demo
 spec:
-  namespace: demo
-  host: podinfo
+  host: podinfo.demo.svc.cluster.local

@@ -23,11 +23,9 @@ spec:
   hosts:
     - podinfo
   gateways:
-    - podinfo-gateway
+    - demo/podinfo-gateway
   http:
     route:
       - destination:
           namespace: demo
           host: podinfo
-          port:
-            number: 9898
