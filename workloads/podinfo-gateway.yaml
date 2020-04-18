@@ -20,8 +20,6 @@ metadata:
   name: podinfo
   namespace: demo
 spec:
-  selector:
-    app: podinfo
   hosts:
     - "*"
   gateways:
@@ -29,4 +27,4 @@ spec:
   http:
     route:
       - destination:
-          host: podinfo
+          host: podinfo.demo.svc.cluster.local
