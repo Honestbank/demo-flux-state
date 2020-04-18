@@ -2,7 +2,6 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: podinfo
-  namespace: demo
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
@@ -11,9 +10,9 @@ spec:
   minReplicas: 2
   maxReplicas: 4
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      # scale up if usage is above
-      # 99% of the requested CPU (10m)
-      targetAverageUtilization: 99
+    - type: Resource
+      resource:
+        name: cpu
+        # scale up if usage is above
+        # 99% of the requested CPU (10m)
+        targetAverageUtilization: 99

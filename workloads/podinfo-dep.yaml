@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo-v1
-  namespace: demo
   labels:
     app: podinfo
     version: v1
@@ -80,7 +79,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo-v2
-  namespace: demo
   labels:
     app: podinfo
     version: v2
