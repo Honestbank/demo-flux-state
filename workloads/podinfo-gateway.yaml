@@ -23,7 +23,7 @@ spec:
   hosts:
     - "*"
   gateways:
-    - podinfo-gateway.demo.svc.cluster.local
+    - podinfo-gateway
   http:
     route:
       - destination:
