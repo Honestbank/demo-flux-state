@@ -2,5 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: podinfo
+  namespace: demo
 spec:
+  namespace: demo
   host: podinfo
