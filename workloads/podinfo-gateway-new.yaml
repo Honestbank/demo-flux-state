@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: new-podinfo-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+    - port:
+        number: 9898
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: new-podinfo
+spec:
+  hosts:
+    - new-podinfo
+  gateways:
+    - new-podinfo-gateway
+  http:
+    route:
+      - destination:
+          host: new-podinfo
