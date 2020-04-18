@@ -21,7 +21,7 @@ metadata:
   namespace: demo
 spec:
   hosts:
-    - "*"
+    - podinfo
   gateways:
     - podinfo-gateway
   http:
