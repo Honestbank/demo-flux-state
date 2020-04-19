@@ -11,7 +11,7 @@ spec:
     istio: ingressgateway # use istio default controller
   servers:
     - port:
-        number: 1818
+        number: 1010
         name: http
         protocol: HTTP
       hosts:
@@ -35,4 +35,4 @@ spec:
         - destination:
             host: argocd-podinfo
             port:
-              number: 9898
+              number: 1010
