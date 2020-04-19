@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: new-podinfo
+  name: argocd-podinfo
   labels:
-    app: new-podinfo
+    app: argocd-podinfo
   annotations:
     # fluxcd.io/automated: "true"
     # fluxcd.io/tag.init: regex:^3.10.*
@@ -11,7 +11,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: new-podinfo
+    app: argocd-podinfo
   ports:
     - name: http
       port: 9898
