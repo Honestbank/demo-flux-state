@@ -1,13 +1,13 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: new-podinfo
+  name: argocd-podinfo
   annotations:
     # fluxcd.io/automated: "true"
     # fluxcd.io/tag.init: regex:^3.10.*
     # fluxcd.io/tag.podinfod: semver:~3.1
 spec:
-  host: new-podinfo
+  host: argocd-podinfo
   subsets:
     - name: v1
       labels:
